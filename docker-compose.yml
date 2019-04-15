@@ -9,6 +9,6 @@ services:
     build:
       context: .
     environment:
-      - METHOD=aes-256-gcm
-      - PASSWORD=9MLSpPmNt
+      - METHOD=aes-256-gcm  # 加密方法
+      - PASSWORD=9MLSpPmNt  # 密码
     restart: always

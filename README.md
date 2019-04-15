@@ -1,15 +1,33 @@
-# vpn-docker
+# shadowsocks-docker
 
+搭建自己的 Shadowsocks VPN, 科学上网!!!
 
+本项目是一个基于镜像源 `shadowsocks/shadowsocks-libev`, docker-compose 自动布署功能包
 
 ## 前提条件
 
 安装 CentOS Docker CE && docker-compose
 
 ```
-chmod +x ./install-docker-ce-centos.sh
-./install-docker-ce-centos.sh
+chmod +x ./install-docker-centos.sh
+./install-docker-centos.sh
 ```
+
+## 安装服务端安装
+
+进入 docker-compose.yml 所在目录：
+执行命令：
+```
+docker-compose up -d
+```
+
+## 下载客户端（Mac & Windows）
+
+- [Shadowsocks (Windows版本)](https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-使用说明)
+- [ShadowsocksX-NG (Mac版本)](https://github.com/shadowsocks/ShadowsocksX-NG)
+
+> 本项目中，已下载 ShadowsocksX-NG (/download 目录下)
+
 
 ## centos 错误解决
 
@@ -20,12 +38,6 @@ chmod +x ./install-docker-ce-centos.sh
 ```
 service docker restart
 ```
-
-
-## 安装 vpn 客户端（Mac & Windows）
-
-- [Shadowsocks (Windows版本)](https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-使用说明)
-- [ShadowsocksX-NG (Mac版本)](https://github.com/shadowsocks/ShadowsocksX-NG)
 
 ## 参考资料
 - [docker 安装](https://docs.docker.com/install/)
