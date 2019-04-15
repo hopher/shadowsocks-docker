@@ -39,6 +39,11 @@ docker-compose up -d
 service docker restart
 ```
 
+## 版本更新
+
+- v1.0.0 初始化
+- v1.1.0 增加多人版功能(计划中...)
+
 ## 参考资料
 - [docker 安装](https://docs.docker.com/install/)
 - [docker centos 安装](https://docs.docker.com/install/linux/docker-ce/centos/)
@@ -46,3 +51,4 @@ service docker restart
 - [oddrationale/docker-shadowsocks](https://hub.docker.com/r/oddrationale/docker-shadowsocks)
 - [10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）](https://juejin.im/post/5b14c5115188257d37761a5a)
 - [shadowsocks/shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine)
+- [shadowsocks 开启多用户](https://github.com/shadowsocks/shadowsocks-libev/issues/1668)
