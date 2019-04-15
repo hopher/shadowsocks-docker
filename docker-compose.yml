@@ -1,24 +1,11 @@
 version: '3'
 services:
-  golang:
-    environment:
-      MIRROR_SOURCE: tencent
-    image: hopher/golang:1.12
-    container_name: my_golang
-    build:
-      context: .
-      dockerfile: ./services/go/Dockerfile
+  shadowsocks:
+    image: hopher/shadowsocks-libev
     ports:
-      - "1313:1313"
-    volumes:
-      # Golang config
-      - src:/go/src:rw
-      - ./services/go/bin:/go/bin:rw
-      - ./services/go/pkg:/go/pkg:rw
-      # Git and ssh config
-      - ~/.ssh:/root/.ssh:ro # Change - ssh key needed to push to github
-      - ~/.gitconfig:/root/.gitconfig:ro  # Change - git config needed for user details
-      #- /tmp/ssh_auth_sock:/tmp/ssh_auth_sock #Static - needed to push to github without prompt
-    stdin_open: true
-    tty: true
+      - "8388:8388/tcp"
+      - "8388:8388/udp"
+    environment:
+      - METHOD=aes-256-gcm
+      - PASSWORD=9MLSpPmNt
     restart: always

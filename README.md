@@ -1,57 +1,31 @@
 # vpn-docker
 
-```
-docker run -d -p 12345:12345 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 12345 -k welcome -m aes-256-cfb
-```
-
-**参数**:
-```
--d  参数允许 docker 常驻后台运行
--p  来指定要映射的端口，这里端口号统一保持一致即可。例如：12345
--s  服务器 IP 地址，不用动
--k  后面设置你的 VPN 的密码，比如：welcome
--m  指定加密方式
-```
 
 
-## Get Docker CE for CentOS
-```
-yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
+## 前提条件
 
-yum install -y yum-utils \
-  device-mapper-persistent-data \
-  lvm2
-
-yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
-
-yum install docker-ce docker-ce-cli containerd.io
-```
-
-## docker-compose
+安装 CentOS Docker CE && docker-compose
 
 ```
-curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x ./install-docker-ce-centos.sh
+./install-docker-ce-centos.sh
 ```
 
-## centos 问题
+## centos 错误解决
 
-```
-docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock
-```
+> docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock
 
-解决：
+解决方法：
+
 ```
 service docker restart
 ```
+
+
+## 安装 vpn 客户端（Mac & Windows）
+
+- [Shadowsocks (Windows版本)](https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-使用说明)
+- [ShadowsocksX-NG (Mac版本)](https://github.com/shadowsocks/ShadowsocksX-NG)
 
 ## 参考资料
 - [docker 安装](https://docs.docker.com/install/)
@@ -59,3 +33,4 @@ service docker restart
 - [docker compose 安装](https://docs.docker.com/compose/install/)
 - [oddrationale/docker-shadowsocks](https://hub.docker.com/r/oddrationale/docker-shadowsocks)
 - [10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）](https://juejin.im/post/5b14c5115188257d37761a5a)
+- [shadowsocks/shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine)
