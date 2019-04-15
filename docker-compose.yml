@@ -2,6 +2,7 @@ version: '3'
 services:
   shadowsocks:
     image: hopher/shadowsocks-libev:latest
+    container_name: my_shadowsocks
     ports:
       - "8388:8388/tcp"
       - "8388:8388/udp"
