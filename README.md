@@ -58,3 +58,4 @@ service docker restart
 - [docker centos 安装](https://docs.docker.com/install/linux/docker-ce/centos/)
 - [docker compose 安装](https://docs.docker.com/compose/install/)
 - [oddrationale/docker-shadowsocks](https://hub.docker.com/r/oddrationale/docker-shadowsocks)
+- [10分钟用 Docker 搭建自己的 Shadowsocks VPN（翻墙必备）](https://juejin.im/post/5b14c5115188257d37761a5a)
